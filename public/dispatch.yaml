@@ -1,0 +1,7 @@
+dispatch:
+   - url: "geo.qlue.city/*"
+     service: geo
+   - url: "www.qlue.city/*"
+     service: mycity-client
+   - url: "qlue.city/*"
+     service: mycity-client

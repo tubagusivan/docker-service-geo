@@ -1,0 +1,34 @@
+runtime: php
+env: flex
+service: geo
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+runtime_config:
+  document_root: web
+#runtime_config:
+#document_root: .
+
+
+# [START env]
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  # MYSQL_DSN: mysql:unix_socket=/cloudsql/qlue-database:asia-south1:qlue-geo;dbname=qlue
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/qlue-database:us-central1:qlue-master;dbname=qluein
+  MYSQL_USER: root
+  MYSQL_PASSWORD: Nz0oGhk9PhJOx0ke
+# [END env]
+
+# env_variables:
+  # MYSQL_CONNECTION: root:qlue7654@unix(/cloudsql/qlue-database:us-central1:qlue-master)/qluein
+  # MYSQL_CONNECTION_PROD: root:Nz0oGhk9PhJOx0ke@unix(/cloudsql/qlue-database:us-central1:qlue-geo)/qluein
+
+beta_settings:
+  # cloud_sql_instances: 'qlue-database:asia-south1:qlue-geo'
+  cloud_sql_instances: 'qlue-database:us-central1:qlue-master'

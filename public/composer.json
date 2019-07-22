@@ -1,0 +1,11 @@
+{
+    "name": "qlue/geo",
+    "description": "Geo Services on Qlue",
+    "type": "service",
+    "minimum-stability": "beta",
+    "require": {
+    	"php": "7.2.*",
+        "phayes/geophp": "^1.2",
+        "slim/slim": "^3.9"
+    }
+}
